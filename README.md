@@ -94,11 +94,43 @@ Let me know if you'd like this converted into a collapsible section or styled wi
 
 
 
+##  Interview Questions:
+
+terms: 1. working directory(before "git add") : your local code , 
+       2. staging area: code goes after "git add" ,
+       3. after commit , code goes to git history for this repo:  
+# git reset :
+1. git reset --soft HEAD~1
+✅ What it does:
+=>Moves the HEAD pointer back by one commit (that's what HEAD~1 means).
+Keeps your changes in the staging area (aka the "index").
+It’s as if you never committed — but your changes are still ready to be committed again. 
+
+2. git reset --mixed HEAD~1 (default if no flag is given)
+✅ What it does:
+Also moves HEAD back by one commit.
+Unstages the changes (moves them from the staging area back to the working directory).
+Your code is still there, just no longer staged for commit.
+
+🧠 When to use it:
+=>You want to undo the last commit and double-check or modify the changes before committing again.
+You accidentally staged files that shouldn’t be in the commit.
+
+📦 State After Command:
+Commit: Reverted.
+Staging Area: ❌ Empty — nothing is staged.
+Working Directory: ✅ Your code is still the
 
 
+Reset Types Compared (Visual Table)
+git reset --soft	❌ Reverts last commit	✅ Keeps staged changes	✅ Keeps your code as-is
+git reset --mixed	❌ Reverts last commit	❌ Unstages changes	✅ Keeps your code as-is
+git reset --hard	❌ Reverts last commit	❌ Unstages everything	❌ Deletes all your code changes
 
-
-
+🔥 Command Summary
+git reset --soft HEAD~1   # Undo commit, keep changes staged
+git reset --mixed HEAD~1  # Undo commit, unstage changes (keep in working dir)
+git reset --hard HEAD~1   # Undo commit, delete all changes!
 
 
 
