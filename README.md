@@ -923,5 +923,31 @@ Use it to apply a single commit from one branch to another.
 
 
 
-## Git Revert vs git Reset: 
+# 🔁 Git Reflog – Beginner Friendly Guide
+
+## 🧠 What is `git reflog`?
+
+`git reflog` is like a **security camera for Git**. It keeps a record of everything you’ve done in your Git repository:
+
+- Commits
+- Branch switches (checkouts)
+- Resets
+- Merges
+- Rebases
+
+Even if you accidentally **delete a commit** or **reset a branch**, `reflog` still remembers!
+
+---
+
+## 🧪 Why is this Useful?
+
+Sometimes you:
+
+- Run `git reset --hard` and lose commits 😱
+- Delete a branch by mistake
+- Can’t find something with `git log`
+
+You can **recover lost work** using `git reflog`.
+
+---
 
